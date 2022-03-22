@@ -31,3 +31,10 @@ Menghubungkan Git dengan Github :
    - git commit -m "pesan apa saja yang sudah dirubah"
 5. Melihat history commit :
    - git log
+6. Menambahkan link Github
+   - git remote add origin_name link_github
+   - git remote -v : memeriksa link github repository yang terdaftar pada project
+7. Konfigurasi branch utama
+   - git branch -m nama_branch
+8. Mengupload/menyimpan ke Github
+   - git push -u origin_name nama_branch
