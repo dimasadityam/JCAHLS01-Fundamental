@@ -1,0 +1,150 @@
+<script>
+	////////////////////// Tugas Day06 Aplikasi Penjualan ////////////////////////
+
+	let konfirmasi = true;
+	// class product : name, stock, price
+	let database = [
+		{
+			name: "Jaket",
+			stock: 20,
+			price: 150000,
+		},
+		{
+			name: "Kaos",
+			stock: 10,
+			price: 35000,
+		},
+		{
+			name: "Sepatu",
+			stock: 25,
+			price: 75000,
+		},
+	];
+	const printDatabase = () => {
+		return database
+			.map((value, index) => {
+				return `${index + 1}. ${value.name} stocknya ${value.stock}, IDR Rp.${
+					value.price
+				}`;
+			})
+			.join("\n ");
+
+		alert(`Stock Produk : \n ${printDatabase()}`);
+	};
+
+	while (konfirmasi) {
+		let beranda = parseInt(
+			prompt(`Selamat Datang di Tokoku
+      1. Tambah Produk
+      2. Beli Produk
+      3. Cek Stock`)
+		);
+
+		if (beranda == 1) {
+			// fitur tambah produk
+			let productBaru = new Object();
+			let tambahNama = prompt(`Masukkan Nama Barang :`);
+			productBaru.name = tambahNama;
+			let tambahStock = prompt(`Tambahkan Stock Barang :`);
+			productBaru.stock = tambahStock;
+			let tambahPrice = prompt(`Masukkan Harga Barang :`);
+			productBaru.price = tambahPrice;
+			database.push(productBaru);
+		} else if (beranda == 2) {
+			// fitur beli produk
+			let menuBeli = prompt(`Silahkan pilih barang:\n ${printDatabase()}`);
+			if (menuBeli == 1) {
+				let qtyBeli = parseInt(prompt(`Beli Jaket berapa?`));
+				if (database[menuBeli - 1].stock < qtyBeli) {
+					alert(`Stock barang tidak tersedia!`);
+				} else if (database[menuBeli - 1].stock > qtyBeli) {
+					let totalBelanja = 0;
+					totalBelanja = database[menuBeli - 1].price * qtyBeli;
+					let uangAnda = parseInt(
+						prompt(`Total belanja anda ${totalBelanja}
+              Masukkan uang anda:`)
+					);
+					if (uangAnda < totalBelanja) {
+						alert(`Pembelian Gagal, Uang anda tidak cukup!`);
+					} else if (uangAnda >= totalBelanja) {
+						let hitungKembalian = 0;
+						hitungKembalian = uangAnda - totalBelanja;
+						alert(`Kembalian anda adalah Rp.${hitungKembalian}`);
+						database[menuBeli - 1].stock -= qtyBeli;
+						alert(`Pembelian berhasil`);
+					} else if (isNaN) {
+						alert(`anda tidak memasukan angka`);
+					} else {
+						alert(`anda tidak memasukan uang anda`);
+					}
+				} else if (isNaN) {
+					alert(`anda tidak memasukan angka`);
+				}
+			} else if (menuBeli == 2) {
+				let qtyBeli = parseInt(prompt(`Beli Kaos berapa?`));
+				if (database[menuBeli - 1].stock < qtyBeli) {
+					alert(`Stock barang tidak tersedia!`);
+				} else if (database[menuBeli - 1].stock > qtyBeli) {
+					let totalBelanja = 0;
+					totalBelanja = database[menuBeli - 1].price * qtyBeli;
+					let uangAnda = parseInt(
+						prompt(`Total belanja anda ${totalBelanja}
+            Masukkan uang anda:`)
+					);
+					if (uangAnda < totalBelanja) {
+						alert(`Pembelian Gagal, Uang anda tidak cukup!`);
+					} else if (uangAnda >= totalBelanja) {
+						let hitungKembalian = 0;
+						hitungKembalian = uangAnda - totalBelanja;
+						alert(`Kembalian anda adalah Rp.${hitungKembalian}`);
+						database[menuBeli - 1].stock -= qtyBeli;
+						alert(`Pembelian berhasil`);
+					} else if (isNaN) {
+						alert(`anda tidak memasukan angka`);
+					} else {
+						alert(`anda tidak memasukan uang anda`);
+					}
+				} else if (isNaN) {
+					alert(`anda tidak memasukan angka`);
+				}
+			} else if (menuBeli == 3) {
+				let qtyBeli = parseInt(prompt(`Beli Sepatu berapa?`));
+				if (database[menuBeli - 1].stock < qtyBeli) {
+					alert(`Stock barang tidak tersedia!`);
+				} else if (database[menuBeli - 1].stock > qtyBeli) {
+					let totalBelanja = 0;
+					totalBelanja = database[menuBeli - 1].price * qtyBeli;
+					let uangAnda = parseInt(
+						prompt(`Total belanja anda ${totalBelanja}
+							Masukkan uang anda:`)
+					);
+					if (uangAnda < totalBelanja) {
+						alert(`Uang anda tidak cukup`);
+					} else if (uangAnda >= totalBelanja) {
+						let hitungKembalian = 0;
+						hitungKembalian = uangAnda - totalBelanja;
+						alert(`Kembalian anda adalah Rp.${hitungKembalian}`);
+						database[menuBeli - 1].stock -= qtyBeli;
+						alert(`Pembelian berhasil`);
+					} else if (isNaN) {
+						alert(`anda tidak memasukan angka`);
+					} else {
+						alert(`anda tidak memasukan uang anda`);
+					}
+				} else if (isNaN) {
+					alert(`anda tidak memasukan angka`);
+				}
+			}
+		} else if (beranda == 3) {
+			// fitur cek stock
+			alert(`Stock Produk:\n ${printDatabase()}`);
+		} else {
+			alert(`Anda salah memasukan angka kode`);
+		}
+		konfirmasi = confirm(`Kembali ke menu utama?`);
+		if (!konfirmasi) {
+			konfirmasi = false;
+		}
+	}
+	alert(`Terima kasih sudah belanja`);
+</script>

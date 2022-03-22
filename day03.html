@@ -1,0 +1,90 @@
+<script>
+	let konfirmasi = true;
+	let listBarang = ["Motor", "Sepatu"];
+	let printBarang = [];
+	let printHapus = "";
+
+	const printDataBaru = () => {
+		// 	let listData = "";
+		// 	listBarang.forEach((value, index) => {
+		// 		listData += `${index + 1}, ${value}\n`;
+		// 	});
+		// 	// for (let i = 0; i < listBarang.length; i++) {
+		// 	// 	listData += `${i + 1}, ${listBarang[i]}\n`;
+		// 	// }
+		// 	return listData;
+		return listBarang
+			.map((value, index) => {
+				return `${index + 1}. ${value}`;
+			})
+			.join("\n");
+
+		alert(`List Data : \n ${printDataBaru()}`);
+	};
+
+	while (konfirmasi) {
+		let beranda = prompt(`Silahkan atur data barang :
+		1. Tambah Data
+		2. Hapus Data
+		3. Lihat Data
+		4. Edit Data`);
+
+		// alert(listData);
+
+		let printData = "";
+
+		if (beranda == "3") {
+			// for (let i = 0; i < listBarang.length; i++) {
+			// 	printBarang += `${i + 1}. ${listBarang[i]}\n`;
+			// }
+			//console.log(listData);
+			alert(`List Data :\n ${printDataBaru()}`);
+			//listData = "";
+		} else if (beranda == "1") {
+			let printData = prompt(`Tambahkan Data :`);
+			if (printData) {
+				listBarang.push(printData);
+				console.log(listBarang);
+			}
+		} else if (beranda == "2") {
+			let listHapus = "";
+			for (let i = 0; i < listBarang.length; i++) {
+				printHapus += `${i + 1}. ${listBarang[i]}\n`;
+			}
+			listHapus = prompt("Hapus Data : \n" + printHapus);
+			//	let spliceHapus = listHapus;
+			listBarang.splice(listHapus - 1, 1);
+			printHapus = "";
+		} else if (beranda == "4") {
+			let edit = parseInt(
+				prompt(`Pilih data yang mau di edit :\n${printDataBaru()}`)
+			);
+			let editBaru = prompt("Masukan Data Baru");
+			listBarang[edit - 1] = editBaru;
+		} else {
+			alert(`data yang di input tidak sesuai`);
+		}
+		konfirmasi = confirm(`Mau atur data lagi ?`);
+		if (!konfirmasi) {
+			konfirmasi = false;
+		}
+	}
+	alert("Terima Kasih");
+
+	// let barang = ["Jaket", "Sepatu", "Kaos"];
+	// for (let i = 0; i < barang.length; i++) {
+	// 	list += `${i + 1} ${barang[i]}:\n`;
+	// }
+
+	// console.log(list);
+
+	// // namaVariableArray.forEach() : melooping data array dan tidak bisa menghasilkan data array baru atau tidak menghasilkan return
+	// const cetak = (value, index) => {
+	// 	list += `${index + 1} ${value}:\n`;
+	// };
+
+	// barang.forEach(cetak); // cara 1
+	barang.forEach((value, index) => {
+		list += `${index + 1} ${value}:\n`;
+	}); // cara 1
+</script>

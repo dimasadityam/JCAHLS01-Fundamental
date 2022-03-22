@@ -1,0 +1,48 @@
+<script>
+	alert(`Mari Berhitung!`);
+	let konfirmasi = true;
+
+	while (konfirmasi) {
+		let input1 = prompt(`Masukkan Angka Pertama Yang Akan Dihitung`);
+		let input2 = prompt(`Masukkan Angka Kedua Yang Akan Dihitung`);
+
+		if (input1 == "" || input2 == "") {
+			alert("ada form yang masih kosong");
+		} else {
+			input1 = Number(input1);
+			input2 = Number(input2);
+
+			if (isNaN(input1) || isNaN(input2)) {
+				alert(`input anda salah`);
+			} else {
+				//input1 = parseInt(input1);
+				//input2 = parseInt(input2);
+
+				//let hasil_tambah = input1 + input2;
+				//let hasil_kurang = input1 - input2;
+				//let hasil_bagi = input1 / input2;
+				//let hasil_kali = input1 * input2;
+				let pembagian = input1 / input2,
+					perkalian = input1 * input2;
+				alert(`Hasil perhitungan :
+	       1. Penjumlahan ${input1} + ${input2} = ${input1 + input2}
+	       2. Pengurangan ${input1} - ${input2} = ${input1 - input2}
+	       3. Pembagian ${input1} / ${input2} = ${pembagian}
+	       4. Perkalian ${input1} * ${input2} = ${perkalian}x`);
+			}
+		}
+		konfirmasi = confirm(`mau berhitung kembali ?`);
+		if (!konfirmasi) {
+			konfirmasi = false;
+		}
+	}
+
+	/**let konfirmasi = confirm(`Apakah kamu mau berhitung lagi?`);
+
+	if (konfirmasi) {
+		window.location = `file:///E:/Dimas/Purwadhika/JC%20Web%20Development/01%20Fundamental/day03.html`;
+	} else {
+		alert(`terima kasih`);
+	}
+	 */
+</script>

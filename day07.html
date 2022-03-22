@@ -1,0 +1,215 @@
+<script>
+	////////////////////// Exercise Day07 ////////////////////////
+
+	let konfirmasi = true;
+	class Produk {
+		constructor(_name, _stock, _price) {
+			this.name = _name;
+			this.stock = _stock;
+			this.price = _price;
+		}
+
+		/**
+		 * getInfo
+		 */
+		listProduk = () => {
+			return `${this.name} stocknya = ${this.stock}, IDR Rp.${this.price}`;
+		};
+		// return `${FnB.name} stocknya ${FnB.stock}, IDR Rp.${FnB.price}, Exp. ${FnB.exp}`;
+	}
+
+	class FnB extends Produk {
+		constructor(_name, _stock, _price, _type, _exp) {
+			super(_name, _stock, _price);
+			this.type = _type;
+			this.exp = _exp;
+		}
+
+		listProduk = () => {
+			// super.listProduk();
+			return `${this.name} stocknya ${this.stock}, IDR Rp.${this.price}, Exp. ${this.exp}`;
+		};
+	}
+	// let dbFnB = [];
+
+	// dbFnB.push(new FnB());
+	//console.log(dbJob);
+
+	// let jobDesc = {
+	// 	job: "Prepare Tools",
+	// 	getStatus: () => {
+	// 		return `Done`;
+	// 	},
+	// };
+
+	//console.log(jobDesc.getStatus());
+	let database = [];
+	// let printTemp = [];
+
+	// let printDatabase = database.map((value, index) => {
+	// 	return `${index + 1}.` + value.listProduk();
+	// });
+
+	// alert(`Stock Produk : \n` + printDatabase.join("\n"));
+
+	// const printDatabase = () => {
+	// 	return database
+	// 		.map((value, index) => {
+	// 			return `${index + 1}. ${value.name} stocknya ${value.stock}, IDR Rp.${
+	// 				value.price
+	// 			}`;
+	// 		})
+	// 		.join("\n ");
+
+	// 	alert(`Stock Produk : \n ${printDatabase()}`);
+	// };
+
+	while (konfirmasi) {
+		let beranda = parseInt(
+			prompt(`Selamat Datang di Tokoku
+	     1. Tambah Produk
+	     2. Beli Produk
+	     3. Cek Stock`)
+		);
+
+		if (beranda == 1) {
+			// fitur tambah produk
+			// let productBaru = new Object();
+			let kategori = prompt(`Pilih kategori:\n 1. Non FnB\n 2.FnB`);
+			if (kategori == 1) {
+				let tambahNama = prompt(`Masukkan Nama Produk :`);
+				let tambahStock = parseInt(prompt(`Tambahkan Stock Produk :`));
+				// productBaru.stock = tambahStock;
+				let tambahPrice = parseInt(prompt(`Masukkan Harga Produk :`));
+				// productBaru.price = tambahPrice;
+				database.push(new Produk(tambahNama, tambahStock, tambahPrice));
+				// printTemp.push(listProduk());
+				alert(`Produk Baru Sudah Terdaftar`);
+				// database.push(productBaru);
+			} else if (kategori == 2) {
+				let tambahNama = prompt(`Masukkan Nama Produk :`);
+				// productBaru.name = tambahNama;
+				let tambahStock = parseInt(prompt(`Tambahkan Stock Produk :`));
+				// productBaru.stock = tambahStock;
+				let tambahPrice = parseInt(prompt(`Masukkan Harga Produk :`));
+				// productBaru.price = tambahPrice;
+				let tambahType = prompt(`Masukkan Type Produk :`);
+				let tambahExp = prompt(`Masukkan ExpDate Produk :`);
+				database.push(
+					new FnB(tambahNama, tambahStock, tambahPrice, tambahType, tambahExp)
+				);
+				// printTemp.push(new FnB);
+				alert(`Produk Baru Sudah Terdaftar`);
+			}
+			console.log(database);
+		} else if (beranda == 2) {
+			// fitur beli produk
+			let menuBeli = prompt(`Silahkan pilih barang:\n ${printDatabase()}`);
+			if (menuBeli == 1) {
+				let qtyBeli = parseInt(prompt(`Beli Jaket berapa?`));
+				if (database[menuBeli - 1].stock < qtyBeli) {
+					alert(`Stock barang tidak tersedia!`);
+				} else if (database[menuBeli - 1].stock > qtyBeli) {
+					let totalBelanja = 0;
+					totalBelanja = database[menuBeli - 1].price * qtyBeli;
+					let uangAnda = parseInt(
+						prompt(`Total belanja anda ${totalBelanja}
+	             Masukkan uang anda:`)
+					);
+					if (uangAnda < totalBelanja) {
+						alert(`Pembelian Gagal, Uang anda tidak cukup!`);
+					} else if (uangAnda >= totalBelanja) {
+						let hitungKembalian = 0;
+						hitungKembalian = uangAnda - totalBelanja;
+						alert(`Kembalian anda adalah Rp.${hitungKembalian}`);
+						database[menuBeli - 1].stock -= qtyBeli;
+						alert(`Pembelian berhasil`);
+					} else if (isNaN) {
+						alert(`anda tidak memasukan angka`);
+					} else {
+						alert(`anda tidak memasukan uang anda`);
+					}
+				} else if (isNaN) {
+					alert(`anda tidak memasukan angka`);
+				}
+			} else if (menuBeli == 2) {
+				let qtyBeli = parseInt(prompt(`Beli Kaos berapa?`));
+				if (database[menuBeli - 1].stock < qtyBeli) {
+					alert(`Stock barang tidak tersedia!`);
+				} else if (database[menuBeli - 1].stock > qtyBeli) {
+					let totalBelanja = 0;
+					totalBelanja = database[menuBeli - 1].price * qtyBeli;
+					let uangAnda = parseInt(
+						prompt(`Total belanja anda ${totalBelanja}
+	           Masukkan uang anda:`)
+					);
+					if (uangAnda < totalBelanja) {
+						alert(`Pembelian Gagal, Uang anda tidak cukup!`);
+					} else if (uangAnda >= totalBelanja) {
+						let hitungKembalian = 0;
+						hitungKembalian = uangAnda - totalBelanja;
+						alert(`Kembalian anda adalah Rp.${hitungKembalian}`);
+						database[menuBeli - 1].stock -= qtyBeli;
+						alert(`Pembelian berhasil`);
+					} else if (isNaN) {
+						alert(`anda tidak memasukan angka`);
+					} else {
+						alert(`anda tidak memasukan uang anda`);
+					}
+				} else if (isNaN) {
+					alert(`anda tidak memasukan angka`);
+				}
+			} else if (menuBeli == 3) {
+				let qtyBeli = parseInt(prompt(`Beli Sepatu berapa?`));
+				if (database[menuBeli - 1].stock < qtyBeli) {
+					alert(`Stock barang tidak tersedia!`);
+				} else if (database[menuBeli - 1].stock > qtyBeli) {
+					let totalBelanja = 0;
+					totalBelanja = database[menuBeli - 1].price * qtyBeli;
+					let uangAnda = parseInt(
+						prompt(`Total belanja anda ${totalBelanja}
+							Masukkan uang anda:`)
+					);
+					if (uangAnda < totalBelanja) {
+						alert(`Uang anda tidak cukup`);
+					} else if (uangAnda >= totalBelanja) {
+						let hitungKembalian = 0;
+						hitungKembalian = uangAnda - totalBelanja;
+						alert(`Kembalian anda adalah Rp.${hitungKembalian}`);
+						database[menuBeli - 1].stock -= qtyBeli;
+						alert(`Pembelian berhasil`);
+					} else if (isNaN) {
+						alert(`anda tidak memasukan angka`);
+					} else {
+						alert(`anda tidak memasukan uang anda`);
+					}
+				} else if (isNaN) {
+					alert(`anda tidak memasukan angka`);
+				}
+			}
+		} else if (beranda == 3) {
+			// fitur cek stock
+			// alert(`Stock Produk:\n ${printDatabase()}`);
+			// for (let i = 0; i < database.length; i++) {}
+
+			let printDatabase = database.map((value, index) => {
+				return `${index + 1}.` + value.listProduk();
+			});
+
+			// let printDatabaseFnB = database.map(value, index, FnB)
+
+			// let printDatabase = database.map((value, index) => {
+			// 	return `${index + 1}.` + value.listFnB();
+			// });
+			//printTemp.push(printDatabase());
+			alert(`Stock Produk : \n` + printDatabase.join("\n"));
+		} else {
+			alert(`Anda salah memasukan angka kode`);
+		}
+		konfirmasi = confirm(`Kembali ke menu utama?`);
+		if (!konfirmasi) {
+			konfirmasi = false;
+		}
+	}
+	alert(`Terima kasih sudah belanja`);
+</script>

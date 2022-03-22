@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Kalkulator</title>
+	</head>
+	<body>
+		<h2 id="title"></h2>
+		<form>
+			<input id="angka1" type="number" placeholder="Masukan Angka" />
+			<input id="angka2" type="number" placeholder="Masukan Angka" />
+			<br />
+			<br />
+			<input
+				type="button"
+				value="                                        Hitung                                          "
+				onclick="Hitung()"
+			/>
+			<br />
+			<br />
+			<ul>
+				<li>Hasil Penjumlahan =</li>
+				<h4 id="hasilTambah"><b></b></h4>
+				<li>Hasil Pengurangan =</li>
+				<h4 id="hasilKurang"><b></b></h4>
+				<li>Hasil Perkalian =</li>
+				<h4 id="hasilKali"><b></b></h4>
+				<li>Hasil Pembagian =</li>
+				<h4 id="hasilBagi"><b></b></h4>
+			</ul>
+		</form>
+	</body>
+	<script>
+		document.getElementById("title").innerHTML = "Kalkulator";
+		function Hitung() {
+			hasilTambah.value = parseInt(angka1.value) + parseInt(angka2.value);
+			hasilKurang.value = parseInt(angka1.value) - parseInt(angka2.value);
+			hasilKali.value = parseInt(angka1.value) * parseInt(angka2.value);
+			hasilBagi.value = parseInt(angka1.value) / parseInt(angka2.value);
+			hasilTambah = document.getElementById("hasilTambah");
+			hasilTambah.innerHTML = hasilTambah.value;
+			hasilKurang = document.getElementById("hasilKurang");
+			hasilKurang.innerHTML = hasilKurang.value;
+			hasilKali = document.getElementById("hasilKali");
+			hasilKali.innerHTML = hasilKali.value;
+			hasilBagi = document.getElementById("hasilBagi");
+			hasilBagi.innerHTML = hasilBagi.value;
+		}
+	</script>
+</html>

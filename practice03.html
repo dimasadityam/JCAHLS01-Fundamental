@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Drawing Shape Practice</title>
+	</head>
+	<body>
+		<div id="container">
+			<h2>Drawing Your Shape</h2>
+			<form id="drawingShape">
+				<select id="shape">
+					<option value="persegi">Persegi</option>
+					<option value="segiTiga">Segitiga</option>
+				</select>
+				<h5>Size of shape :</h5>
+				<input id="shapeNumber" type="number" />
+				<button type="button" onclick="generate()">Generate</button>
+				<h5 id="cetakSym"></h5>
+			</form>
+		</div>
+	</body>
+	<script>
+		let shapeNumb = 0;
+		const generate = () => {
+			let form = document.getElementById("drawingShape");
+			shapeNumb = document.getElementById("shapeNumber");
+			let typeShape = form.elements["shape"].value;
+			console.log(shapeNumb.value);
+			if (typeShape == "persegi") {
+				cetakPersegi();
+			} else {
+				cetakSegiTiga();
+			}
+		};
+
+		const cetakSegiTiga = () => {
+			let symC = "";
+
+			for (let i = 1; i <= shapeNumb.value; i++) {
+				for (let j = 1; j <= i; j++) {
+					if (i % 2 == 0) {
+						symC += `# `;
+					} else {
+						if (j % 2 == 0) {
+							symC += `# `;
+						} else {
+							symC += `* `;
+						}
+					}
+				}
+				if (i < shapeNumb.value) {
+					symC += "<br />";
+				}
+			}
+			document.getElementById("cetakSym").innerHTML = symC;
+		};
+
+		const cetakPersegi = () => {
+			let symC = "";
+
+			for (let i = 1; i <= shapeNumb.value; i++) {
+				for (let j = 1; j <= shapeNumb.value; j++) {
+					if (i % 2 == 0) {
+						symC += `# `;
+					} else {
+						if (j % 2 == 0) {
+							symC += `# `;
+						} else {
+							symC += `* `;
+						}
+					}
+				}
+				if (i < shapeNumb.value) {
+					symC += "<br >";
+				}
+			}
+			document.getElementById("cetakSym").innerHTML = symC;
+		};
+	</script>
+</html>

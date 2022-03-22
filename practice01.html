@@ -1,0 +1,181 @@
+<script>
+	//====================================== Tugas 1 ==========================================
+	// lakukan pengecekan kepada angka yang di input ke prompt apakah Angka Ganjil atau Angka Genap?
+
+	/** let inputAngka = prompt("Masukkan Angka Ganjil atau Genap :");
+	let AngkaGenap = true;
+
+	for (let i = 0; i < Number(inputAngka); i++) {
+	  AngkaGenap = !AngkaGenap;
+	  }
+	  if (AngkaGenap) {
+	    alert(`Ini angka GENAP`);
+	  } else {
+	    alert(`Ini angka GANJIL`);
+	  }
+	   */
+
+	/**	let bilangan = prompt(`Masukkan Angka Ganjil atau Genap :`);
+
+		let Genap = true;
+		if ((bilangan = ganjil)) {
+	    alert(`Angka tersebut bilangan Ganjil`);
+		} else if ((bilangan = genap)) {
+	    alert(`Angka tersebut bilangan Genap`);
+		} else {
+	    alert(`Anda tidak memasukkan angka`);
+		}
+	   */
+	//
+	//
+	//
+	//
+
+	//====================================== Tugas 2 ==========================================
+	// lakukan pengecekan terhadap kata polindrom kepada string dari prompt
+
+	/**	let inputPolin = prompt("Masukkan kata :");
+
+	if (
+		inputPolin.split("").reverse("").join("").toLowerCase() ==
+		inputPolin.toLowerCase()
+	) {
+		alert(`Kata ${inputPolin} adalah kata Polindrom`);
+	} else {
+		alert(`Kata ${inputPolin} bukan kata Polindrom `);
+	}
+	 */
+
+	// take a string from the user
+
+	// let inputKata = prompt(`Pemeriksaan kata palindrom`);
+	// let value = palindrom(inputKata); // call the function
+
+	// let konfirmasi = true;
+
+	// function palindrom(str) {
+	// convert the string into an array using the string.split() function
+	// 	let nilaiArray = inputKata.split(""); //
+
+	// use reverse() method to reverse the array values
+	// 	let revNilaiArray = nilaiArray.reverse();
+
+	// use join() method to group the array values into the string
+	// 	let revInputKata = revNilaiArray.join("");
+
+	// 	if (inputKata == revInputKata) {
+	// if string condition is equal to the revString
+	// 		alert(inputKata + ` adalah kata palindrom`); // print the Palindrome
+	// 	} else {
+	// 		alert(inputKata + ` bukan kata palindrom`); // if the condition is not true.
+	//	}
+
+	/**let konfirmasi = confirm(`mau periksa kata palindrom kembali?`);
+	        if (konfirmasi) {
+	          window.location = `file:///E:/Dimas/Purwadhika/JC%20Web%20Development/01%20Fundamental/practice01.html`;
+	         } else {
+	           alert(`terima kasih`);
+	         }*/
+	// }
+
+	/////////////////////// polindrom ka abdi ///////////////////////////
+	/**
+	 * let polin = prompt (`Masukkan kata palindrom :`);
+	 *
+	 *
+	 * if(polin.split(``).reverse(``).join(``).toLowerCase() == polin.toLowerCase()) {
+	 *  alert(`Kata ${polin} ini polindrom ${polin.split(``).reverse(``).join(``).toLowerCase()}`);
+	 * } else {
+	 *  alert(`Kata ${polin} ini bukan polindrom ${polin.split(``).reverse(``).join(``).toLowerCase()}`);
+	 * }
+	 *
+	 *  //// CARA 2 //////
+	 * let polin_reverse = ``;
+	 * for (let i = polin.length - 1; i >= 0; i--){
+	 * console.log(`Alamat index string huruf : ${i}`, poling.charAt(i))
+	 * polin.reverse += poling.chartAt(i);
+	 * }
+	 *if polin_reverse
+	 */
+
+	//
+	//
+	//
+	//
+	//
+	//======================================= Tugas 3 ================================================
+	// Lakukan koreksi string pada prompt agar hanya kata pertama saja yang UperCase dan huruf selanjutnya LowerCase
+
+	let isiCase = prompt("Masukkan Kalimat Huruf :");
+	let lowCase = "";
+
+	for (let i = 0; i < isiCase.length; i++) {
+		if (i == 0) {
+			lowCase += isiCase.charAt(i).toUpperCase();
+		} else if (isiCase.charAt(i - 1) == " ") {
+			lowCase += isiCase.charAt(i).toUpperCase();
+		} else {
+			lowCase += isiCase.charAt(i).toLowerCase();
+		}
+	}
+	alert(lowCase);
+	/**
+	          * let inputTitle = prompt(`Masukkan kalimat :`);
+
+		function titleCase(inputTitle) {
+			return inputTitle
+				.toLowerCase()
+				.split(" ")
+				.map(function (word) {
+					return word.replace(word[0], word[0].toUpperCase());
+				})
+				.join(" ");
+		}
+		alert(titleCase(inputTitle));
+	  */
+
+	//========================================== Tugas 5 =================================================//
+	// identifikasi huruf vokal dan jumlah jenis huruf vokal
+	// Noted : "//" = cara 1, "/** */" = cara 2
+
+	//let inputKalimat = prompt("Masukkan Kalimat :");
+
+	/**
+	 * let inputKalimat = prompt("Masukkan Kalimat :").toLowerCase();
+	 */
+
+	//let hurufVokal = "";
+
+	//for (let i = 0; i < inputKalimat.length; i++)
+
+	/**
+	 * let cekVokal = true;
+	 */
+
+	//if (
+	//inputKalimat[i].toLowerCase() == "a" ||
+	//inputKalimat[i].toLowerCase() == "i" ||
+	//inputKalimat.charAt(i).toLowerCase() == "u" ||
+	//inputKalimat.charAt(i).toLowerCase() == "e" ||
+	//inputKalimat.charAt(i).toLowerCase() == "o"
+	//) {
+
+	/**
+	 * for (let b = 0; b < hurufVokal.length; b++){
+	 * if(hurufVokal[b] == inputKalimat[i]){
+	 * cekVokal = false;
+	 * }
+	 * }
+	 * if (cekVokal) {
+	 * hurufVokal += inputKalimat[i];
+	 * }
+	 */
+
+	//if (!hurufVokal.includes(inputKalimat.charAt(i).toLowerCase())) {
+	//hurufVokal += inputKalimat.charAt(i).toLowerCase();
+	//}
+	//}
+	//alert(`Kalimat = ${inputKalimat}
+	//Huruf Vokal = ${hurufVokal}
+	//Jumlah Jenis Huruf Vokal = ${hurufVokal.length}`);
+</script>

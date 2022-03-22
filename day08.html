@@ -1,0 +1,98 @@
+<!-- <!DOCTYPE html> : untuk mengidikasikan jika menggunakan html 5-->
+<!DOCTYPE html>
+
+<!-- <html lang="en"> : root element atau element utama yang menampung berbagai macam tag element lain nya -->
+<html lang="en">
+	<!-- <head> : untuk menyimpan informasi website berupa charset / pengkodean / penerjemah kode / compatibility -->
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Intro HTML</title>
+	</head>
+
+	<!-- <body> bagian utama tampilan website / isi dari HTMLnya -->
+	<body>
+		<div>
+			<!-- <div> : untuk mengkelompokan antar element  -->
+			<h1 id="" class="" style="">Hello One</h1>
+			<h2>Hello Two</h2>
+			<h3>Hello Three</h3>
+			<h4>Hello Four</h4>
+			<h5>Hello Five</h5>
+			<h6>Hello Six</h6>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+				nostrum ad a officia tempore beatae saepe iusto unde pariatur at
+				eligendi corrupti quas provident voluptatibus ut, ipsam consequatur in
+				tenetur.
+			</p>
+			<b> Learn Code </b>
+			<br />
+			<i> Javascript</i>
+			<u>at Purwadhika</u>
+
+			<!-- Ordered List -->
+			<ol type="a">
+				<li>Fundamental</li>
+				<li>Front End</li>
+				<li>Back End</li>
+			</ol>
+
+			<!-- Unordered List -->
+			<ul>
+				<li>Home</li>
+				<li>Profile</li>
+				<li>Setting</li>
+			</ul>
+
+			<!-- Element Input : untuk menerima input -->
+			<input type="text" placeholder="Input Name" />
+			<input type="number" />
+			<input type="password" placeholder="Minium 8" />
+			<input type="checkbox" />
+			<input type="radio" />
+			<select>
+				<option>Pilih data</option>
+			</select>
+			<textarea placeholder="Note"> </textarea>
+			<input type="button" value="Button 1" />
+			<button>Button 2</button>
+			<!-- <img> : menampilkan image -->
+			<!-- atribut adalah velue untuk mengatur element dan diatur di awal tag nya -->
+			<!-- metode 1 : Absolute Path/Link : ketika mau menampilkan gambar tapi dari URL atau link diluar PC kita -->
+			<img
+				src="data:image/png;base64,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"
+				alt="image-code"
+				width="10%"
+			/>
+			<!-- Relative Path/Link : menampilkan gambar yang kita simpan di project-->
+			<img src="tes 2.png" alt="random-image" width="25%" />
+
+			<table>
+				<thead>
+					<th>No</th>
+					<th>Nama</th>
+					<th>Age</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>Dimas</td>
+						<td>28</td>
+					</tr>
+					<!-- <tr> table row <td> table data -->
+					<tr>
+						<td>2</td>
+						<td>Aditya</td>
+						<td>28</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+
+	<!-- DOM : Dokument Object Model -->
+	<!-- <script> : menjalankan fungsi javascriptnya -->
+	<script></script>
+</html>

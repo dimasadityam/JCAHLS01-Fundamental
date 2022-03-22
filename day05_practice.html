@@ -1,0 +1,56 @@
+<script>
+	let konfirmasi = true;
+	let database = [
+		{
+			name: "Hoodie",
+			stock: 20,
+			price: 85000,
+		},
+		{
+			name: "Jeans",
+			stock: 15,
+			price: 90000,
+		},
+	];
+	const printDatabase = database
+		.map((value, index) => {
+			return `${index + 1}. ${value.name} stocknya ada ${
+				value.stock
+			}, harganya Rp.${value.price}`;
+		})
+		.join("\n ");
+
+	while (konfirmasi) {
+		//	   alert (`Anda memasuki database barang`);
+		let beranda = prompt(`Database Barang :
+	   1. Lihat Data
+	   2. Tambah Data
+	   3. Hapus Data
+	   4. Edit Data`);
+
+		if (beranda == "1") {
+			// fitur lihat data
+			alert(`List Data Barang :\n ${printDatabase}`);
+		} else if (beranda == "2") {
+			// fitur tambah data
+			let newDataName = prompt(`Masukan Nama Data Baru :`);
+			database[database.length].name = newDataName;
+			let newDataStock = prompt(`Masukan Jumlah Stock :`);
+			database[database.length].stock = newDataStock;
+			let newDataPrice = prompt(`Masukan Harga :`);
+			database[database.length].price = newDataPrice;
+		} else if (beranda == "3") {
+			// fitur hapus data
+		} else if (beranda == "4") {
+			// fitur edit data
+		} else {
+			alert(`anda salah memasukan kode menu pada database!`);
+		}
+
+		konfirmasi = confirm(`Mau buka database kembali?`);
+		if (!konfirmasi) {
+			konfirmasi = false;
+		}
+	}
+	alert(`Terima kasih`);
+</script>
