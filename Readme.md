@@ -29,3 +29,5 @@ Menghubungkan Git dengan Github :
    - git add . : jika mengarahkan ke semua file
 4. Menyimpan perubahan di commited session/kedalam Git
    - git commit -m "pesan apa saja yang sudah dirubah"
+5. Melihat history commit :
+   - git log
